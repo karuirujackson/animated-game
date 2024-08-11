@@ -1,5 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Button, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+
+export default function Home() {
+  const navigation = useNavigation();
+  return (
+    <View style={styles.container}>
+        <Button onPress={() => navigation.navigate(Game)} title='Start Game!' />
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -9,12 +20,3 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
-
-export default function Home() {
-  return (
-    <View style={styles.container}>
-        <Text>Home Screen</Text>
-    </View>
-  );
-}
-
